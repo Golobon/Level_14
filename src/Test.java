@@ -1,18 +1,14 @@
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Month;
 import java.util.*;
 
 public class Test {
-    public static void main(String[] args) {
-        ArrayList list = new ArrayList();
-        remove10000(list);
-        System.out.println(list);
-    }
-
-    public static void remove10000(List list) {
-        for (int i = 0; i < 10000; i++) {
-            /*if (list.isEmpty()) {
-                return;
-            }*/
-            list.remove(0);
-        }
+    public static void main(String[] args) throws ParseException {
+        DateFormat dateFormat = new SimpleDateFormat("dddd MMMM yyyy", Locale.ENGLISH);
+        ArrayList<Date> list = new ArrayList<>();
+        list.add(dateFormat.parse("1 may 2020"));
+        System.out.println(list.get(0).getMonth());
     }
 }
