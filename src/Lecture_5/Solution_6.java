@@ -17,6 +17,10 @@ public class Solution_6 {
             intList.add(Integer.parseInt(bR.readLine()));
         }
 
+        if (intList.isEmpty()) {
+            return;
+        }
+
         int count = 1;
         int max = 0;
 
