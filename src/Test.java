@@ -10,5 +10,6 @@ public class Test {
         ArrayList<Date> list = new ArrayList<>();
         list.add(dateFormat.parse("1 may 2020"));
         System.out.println(list.get(0).getMonth());
+        System.out.println(Collections.disjoint(solarSystemPart1, solarSystemPart2));
     }
 }
