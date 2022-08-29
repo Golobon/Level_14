@@ -6,11 +6,20 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] args) throws ParseException {
-        DateFormat dateFormat = new SimpleDateFormat("dddd MMMM yyyy", Locale.ENGLISH);
-        ArrayList<Date> list = new ArrayList<>();
-        list.add(dateFormat.parse("1 may 2020"));
-        System.out.println(list.get(0).getMonth());
-        System.out.println(Collections.disjoint(solarSystemPart1, solarSystemPart2));
-        System.out.println("Хоп");
+        Integer a = new Integer(3);
+        Integer b = new Integer(3);
+        Integer c = 3;
+        Integer d = 3;
+        Integer e = 333;
+        Integer f = 333;
+        System.out.println(a==b);
+        System.out.println(a.equals(b));
+        System.out.println();
+        System.out.println(c==d);
+        System.out.println(c.equals(d));
+        System.out.println();
+        System.out.println(e==f);
+        System.out.println(e.equals(f));
+
     }
 }
