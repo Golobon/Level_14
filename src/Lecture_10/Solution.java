@@ -7,9 +7,7 @@ import java.util.Set;
 public class Solution {
     public static void main(String[] args) {
         Set<Cat> cats = createCats();
-        Iterator<Cat> iter = cats.iterator();
-        iter.next();
-        iter.remove();
+        cats.remove(cats.iterator().next());
         printCats(cats);
     }
 
