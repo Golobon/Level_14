@@ -1,7 +1,6 @@
 package Lecture_10;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 public class Solution {
@@ -13,9 +12,9 @@ public class Solution {
 
     public static Set<Cat> createCats() {
         HashSet<Cat> set = new HashSet<>();
-        for (int i = 0; i < 3; i++) {
-            set.add(new Cat());
-        }
+            set.add(new Cat("Bob"));
+            set.add(new Cat("Bob1"));
+            set.add(new Cat("Bob2"));
         return set;
     }
 
@@ -24,5 +23,9 @@ public class Solution {
     }
 
     public static class Cat {
+        public String name;
+        public Cat (String name){
+            this.name = name;
+        }
     }
 }
