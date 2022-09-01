@@ -8,6 +8,29 @@ import java.util.function.Predicate;
 public class Test {
     public static void main(String[] args){
         System.out.println(DayOfWeek.values()[0]);
+        System.out.println("false OR false = " + (false | false));
+        System.out.println("false OR true  = " + (false | true));
+        System.out.println("true  OR false = " + (true | false));
+        System.out.println("true  OR true  = " + (true | true));
+
+
+
+            int[] a = new int[100];
+            for (int i = 0; i < a.length; i++) {
+                a[i] = i;
+            }
+
+            sum(a);
+            sum(1,2,3,4,5,6,7,8,9,10);
+        }
+
+        static void sum(int... numbers){
+            final int length = numbers.length;
+            final int sum = Arrays.stream(numbers).sum();
+            final String lineSeparator = System.lineSeparator();
+
+            System.out.printf("Кол-во элементов для сложения - %d, сумма - %d%s", length, sum, lineSeparator);
+
     }
 
     public enum DayOfWeek {

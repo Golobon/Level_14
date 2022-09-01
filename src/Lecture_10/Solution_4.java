@@ -6,29 +6,20 @@ import java.util.List;
 
 public class Solution_4 {
     public static void main(String[] args) {
-        ArrayList<Human> nonChild = new ArrayList<>();
 
-        Human child1 = new Human("Bib1", true, 9, nonChild);
-        Human child2 = new Human("Biba2", false, 9, nonChild);
-        Human child3 = new Human("Bib3", true, 9, nonChild);
-        ArrayList<Human> child = new ArrayList<>();
-        child.add(child1);
-        child.add(child2);
-        child.add(child3);
+        Human child1 = new Human("Bib1", true, 9);
+        Human child2 = new Human("Biba2", false, 9);
+        Human child3 = new Human("Bib3", true, 9);
 
-        Human father = new Human("Bob", true, 30, child);
-        ArrayList<Human> grand1Child = new ArrayList<>();
-        grand1Child.add(father);
+        Human father = new Human("Bob", true, 30, child1, child2, child3);
+        Human mother = new Human("Lila", false, 30, child1, child2, child3);
 
-        Human mother = new Human("Lila", false, 30, child);
-        ArrayList<Human> grand2Child = new ArrayList<>();
-        grand2Child.add(mother);
 
-        Human grandPha1 = new Human("BilleBob1", true, 90, grand1Child);
-        Human grandMa1 = new Human("Zina1", false, 90, grand1Child);
+        Human grandPha1 = new Human("BilleBob1", true, 90, father);
+        Human grandMa1 = new Human("Zina1", false, 90, father);
 
-        Human grandPha2 = new Human("BillyBob2", true, 90, grand2Child);
-        Human grandMa2 = new Human("Zina2", false, 90, grand2Child);
+        Human grandPha2 = new Human("BillyBob2", true, 90, mother);
+        Human grandMa2 = new Human("Zina2", false, 90, mother);
 
         System.out.println(child1);
         System.out.println(child2);
@@ -45,13 +36,13 @@ public class Solution_4 {
         String name;
         boolean sex;
         int age;
-        ArrayList<Human> children;
+        ArrayList<Human> children = new ArrayList<>();
 
-        public Human(String name, boolean sex, int age, ArrayList<Human> children) {
+        public Human(String name, boolean sex, int age, Human... children) {
             this.name = name;
             this.sex = sex;
             this.age = age;
-            this.children = children;
+            Collections.addAll(this.children, children);
         }
 
         public String toString() {
