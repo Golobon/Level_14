@@ -17,8 +17,10 @@ public class Solution_6 {
             if (cityKey.isEmpty()) {
                 break;
             }
+
             String familyValue = reader.readLine();
             map.put(cityKey, familyValue);
+            System.out.println();
         }
         System.out.println(map.get(reader.readLine()));
     }
